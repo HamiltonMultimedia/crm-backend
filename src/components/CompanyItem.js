@@ -3,30 +3,45 @@ import { Text, View, StyleSheet, Image } from 'react-native';
 import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+
 const theme = getTheme();
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexWrap: 'wrap',
+        paddingTop: 20,
+        
+      },
   card: {
-    marginTop: 20,
+      marginTop: 20,
+      alignItems: 'center',
   },
   title: {
-      top: 20,
-      left: 80,
-      fontSize: 26,
-  },
+    top: 15,
+    left: 105,
+    fontSize: 24,
+    color: 'ghostwhite',
+    textShadowColor:'black',
+    textShadowOffset: { width: .3, height: .3 },
+    textShadowRadius: 20,
+      margin: 0,
+    },
   image: {
+      width: 343,
       height: 100,
-  },
-  action: {
-      backgroundColor: 'black',
-      color: 'white',
-      paddingBottom: 5,
-      paddingTop: 5,
-  },
+    },
+    action: {
+        backgroundColor: 'darkgray',
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
+        width: 343
+    },
   icon: {
       position: 'absolute',
       top: 10,
-      left: 10,
+      left: 20,
       color: 'white',
       backgroundColor: 'rgba(255,255,255,0)',
   },
@@ -34,10 +49,10 @@ const styles = StyleSheet.create({
 
 const CompanyItem = (props) => {
     return (
-        <View>
+        <View style={styles.container}>
             <View style={[theme.cardStyle, styles.card]}>
                 <Image
-                    source={{ uri: '/Users/emmanuelhenri/Desktop/crm/crm/src/images/background.jpg'}}
+                    source={require('../images/us_flag_bg.png')}
                     style={[theme.cardImageStyle, styles.image]}
                 />
                 <Icon
